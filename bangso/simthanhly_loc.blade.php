@@ -88,96 +88,38 @@
 
     <div class="filter-link">
         <span class="label">Chọn giá:</span>
-        <!-- filter item -->
-        <a data-remove="0-1"
 
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '0-1')
+        @php
 
-           class="active"
-           @endif
+            $khoanggias = (object) [
 
+    '0-1' => '< 1tr',
+    '1-3' => '1-3tr',
+    '3-5' => '3-5tr',
+    '5-10' => '5-10tr',
+    '10-20' => '10-20tr',
+    '20-50' => '20-50tr',
+    '50-100' =>'50-100tr',
+    '100-10000' => '> 100tr'        ];
 
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '0-1', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">&lt;1tr</a>
-        <a data-remove="1-2"
+        @endphp
+        @foreach ($khoanggias AS $khoanggia => $kname)
+            <a data-remove="{{$khoanggia}}"
 
+               @if(\Illuminate\Support\Facades\Input::get('gia') == $khoanggia)
 
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '1-2')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '1-2', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">1-2tr</a>
-        <a data-remove="2-3"
-
-
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '2-3')
-
-           class="active"
-           @endif
+               class="active"
+               @endif
 
 
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '2-3', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">2-3tr</a>
-        <a data-remove="3-5"
+               href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  $khoanggia, 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}">{{$kname}}</a>
+
+        @endforeach
 
 
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '3-5')
-
-           class="active"
-           @endif
-
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '3-5', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">3-5tr</a>
-        <a data-remove="5-8"
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '5-8')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '5-8', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">5-8tr</a>
-        <a data-remove="8-10"
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '8-10')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '8-10', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">8-10tr</a>
-        <a data-remove="10-15"
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '10-15')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '10-15', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">10-15tr</a>
-        <a data-remove="15-20"
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '15-20')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '15-20', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">15-20tr</a>
-        <a data-remove="20-50"
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '20-50')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '20-50', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">20-50tr</a>
-        <a data-remove="50-100"
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '50-100')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '50-100', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">50-100tr</a>
-        <a data-remove="100-10000"
-           @if(\Illuminate\Support\Facades\Input::get('gia') == '100-10000')
-
-           class="active"
-           @endif
-
-           href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' =>  (\Illuminate\Support\Facades\Input::get('mang') ?? '') , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' =>  '100-10000', 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? ''),'sim' => (\Illuminate\Support\Facades\Input::get('sim') ?? ''),  'loai' => (\Illuminate\Support\Facades\Input::get('loai') ?? '')])}}">&gt;100tr</a>
-        <!-- #filter item -->
     </div>
+
+    <div  style="margin-bottom: 15px !important;"></div>
     <div class="dropdown">
         <button class="dropbtn">
             @if(\Illuminate\Support\Facades\Input::get('sapxep') =='ngaunhien')
@@ -191,7 +133,7 @@
             @endif
             <span class="caret"></span>
         </button>
-        <div class="dropdown-content">
+        <div class="dropdown-content"  style="position: absolute; right: 0">
             <a @if(\Illuminate\Support\Facades\Input::get('sapxep') =='ngaunhien')
 
                class="active"

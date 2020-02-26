@@ -33,8 +33,8 @@
 
                                                 <p>
                                                     <span class="sim-item--number">{{$r->sim1}}</span>
-                                                    <span class="sim-item--price">{{number_format($r->gianhap*1000000)}} đ</span>
-                                                    <del class="sim-item--priceDel">{{number_format($r->giaban*1000000)}}
+                                                    <span class="sim-item--price">{{number_format($r->giaban*1000000)}} đ</span>
+                                                    <del class="sim-item--priceDel">{{number_format($r->gianhap*1000000)}}
                                                         đ
                                                     </del>
                                                 </p>

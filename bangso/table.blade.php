@@ -1,4 +1,5 @@
 
+
 <div class="table">
     <div class="table-body">
         <!-- row item -->
@@ -34,13 +35,11 @@
                 $new =array();
                 foreach ($split AS $sp)
                 {
-                    $new[]= "<span style='color:#db002d'>".$sp."</span>";
+                    $new[]= "<span style='color:#E66A20'>".$sp."</span>";
                 }
 
              $row->sim2 =    str_replace($split,$new,$row->sim1);
                 $i++;
-
-
 
             @endphp
 

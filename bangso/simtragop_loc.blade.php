@@ -83,6 +83,118 @@
         <!-- #filter item -->
     </div>
 
+        @else
+
+        <div class="filter-link">
+            <span class="label">Chọn mạng:</span>
+
+        @if(in_array(\Illuminate\Support\Facades\Input::get('dauso'),['09']))
+
+            <!-- filter item -->
+                <a data-remove="viettel"
+
+                   @if(\Illuminate\Support\Facades\Input::get('mang') == 'viettel')
+
+                   class="active"
+                   @endif
+                   href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'viettel' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Viettel</a>
+                <a data-remove="mobifone" @if(\Illuminate\Support\Facades\Input::get('mang') == 'mobifone')
+
+                class="active"
+                   @endif
+
+                   href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'mobifone' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Mobifone</a>
+                <a data-remove="vinaphone" @if(\Illuminate\Support\Facades\Input::get('mang') == 'vinaphone')
+
+                class="active"
+                   @endif href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'vinaphone' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                   data-mang="mobifone">Vinaphone</a>
+                <a data-remove="vietnamobile" @if(\Illuminate\Support\Facades\Input::get('mang') == 'vietnamobile')
+
+                class="active"
+                   @endif href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'vietnamobile' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Vietnamobile</a>
+                <a data-remove="gmobile"
+                   @if(\Illuminate\Support\Facades\Input::get('mang') == 'gmobile')
+
+                   class="active"
+                   @endif href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'gmobile' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Gmobile</a>
+
+
+
+        @elseif(in_array(\Illuminate\Support\Facades\Input::get('dauso'),['08']))
+            <!-- filter item -->
+                <a data-remove="viettel"
+
+                   @if(\Illuminate\Support\Facades\Input::get('mang') == 'viettel')
+
+                   class="active"
+                   @endif
+                   href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'viettel' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Viettel</a>
+                <a data-remove="mobifone" @if(\Illuminate\Support\Facades\Input::get('mang') == 'mobifone')
+
+                class="active"
+                   @endif
+
+                   href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'mobifone' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Mobifone</a>
+                <a data-remove="vinaphone" @if(\Illuminate\Support\Facades\Input::get('mang') == 'vinaphone')
+
+                class="active"
+                   @endif href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'vinaphone' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                   data-mang="mobifone">Vinaphone</a>
+
+                <a data-remove="Itelecom" @if(\Illuminate\Support\Facades\Input::get('mang') == 'Itelecom')
+
+                class="active"
+                   @endif href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'Itelecom' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Itelecom</a>
+            @elseif(in_array(\Illuminate\Support\Facades\Input::get('dauso'),['07']))
+
+
+                <a data-remove="mobifone" @if(\Illuminate\Support\Facades\Input::get('mang') == 'mobifone')
+
+                class="active"
+                   @endif
+
+                   href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'mobifone' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Mobifone</a>
+
+
+            @elseif(in_array(\Illuminate\Support\Facades\Input::get('dauso'),['05']))
+                <a data-remove="vietnamobile" @if(\Illuminate\Support\Facades\Input::get('mang') == 'vietnamobile')
+
+                class="active"
+                   @endif href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'vietnamobile' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Vietnamobile</a>
+                <a data-remove="gmobile"
+                   @if(\Illuminate\Support\Facades\Input::get('mang') == 'gmobile')
+
+                   class="active"
+                   @endif href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'gmobile' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Gmobile</a>
+
+            @elseif(in_array(\Illuminate\Support\Facades\Input::get('dauso'),['03']))
+
+
+                <a data-remove="viettel"
+
+                   @if(\Illuminate\Support\Facades\Input::get('mang') == 'viettel')
+
+                   class="active"
+                   @endif
+                   href="{{URL::current()."?page=".(\Illuminate\Support\Facades\Input::get('page') ?? 0)."&".http_build_query(['mang' => 'viettel' , 'dauso' =>  (\Illuminate\Support\Facades\Input::get('dauso') ?? ''), 'gia' => (\Illuminate\Support\Facades\Input::get('gia') ?? ''), 'sapxep' => (\Illuminate\Support\Facades\Input::get('sapxep') ?? '')])}}"
+                >Viettel</a>
+            @else
+
+
+            @endif
+
+        </div>
     @endif
 
 
@@ -91,17 +203,18 @@
 
         @php
 
-        $khoanggias = (object) [
+            $khoanggias = (object)
+                 [
 
-        '0-1' => '< 1tr',
-        '1-3' => '1-3tr',
-        '3-5' => '3-5tr',
-        '5-10' => '5-10tr',
-        '10-20' => '10-20tr',
-        '20-50' => '20-50tr',
-        '50-100' =>'50-100tr',
-        '100-10000' => '> 100tr'        ];
+                     '0-10' => '0-10tr',
+                     '10-20' => '10-20tr',
+                     '20-50' => '20-50tr',
+                     '50-100' => '50-100tr',
+                     '200-500' => '200-500tr',
+                     '500-10000' => '> 500tr',
 
+
+                 ];
         @endphp
         @foreach ($khoanggias AS $khoanggia => $kname)
         <a data-remove="{{$khoanggia}}"
@@ -118,6 +231,7 @@
 
 
     </div>
+    <div  style="margin-bottom: 15px !important;"></div>
     <div class="dropdown">
         <button class="dropbtn">
             @if(\Illuminate\Support\Facades\Input::get('sapxep') =='ngaunhien')
@@ -131,7 +245,7 @@
             @endif
             <span class="caret"></span>
         </button>
-        <div class="dropdown-content">
+        <div class="dropdown-content"  style="position: absolute; right: 0">
             <a @if(\Illuminate\Support\Facades\Input::get('sapxep') =='ngaunhien')
 
             class="active"

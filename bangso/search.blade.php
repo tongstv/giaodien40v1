@@ -1,8 +1,9 @@
 @extends("app")
 
 @section('content')
-
+    @if(@$query['loai'] != 13)
     @include("bangso.loc")
+    @endif
     @include ("seo_header")
     <div class="table-head">
 
@@ -11,15 +12,32 @@
     </div>
 
 
-    @include("bangso.uutien")
+    @if($check->action=='loaisim')
 
+        @if($query['loai'] == 13)
+            @include("bangso.simnamsinh")
+
+
+        @endif
+
+    @endif
+
+
+    <div style="display: @if(\Illuminate\Support\Facades\Input::get('ngay'))
+none
+    @else
+   block
+    @endif
+            "> @include("bangso.uutien")</div>
 
 
 
 
     @include("bangso.table")
 
+    @if(@$query['loai'] != 13)
     @include("bangso.loc")
+    @endif
 
     @if ($check->action=='loaisim' || $check->action=='mang')
 

@@ -81,11 +81,14 @@
                                placeholder="Chuyển khoản ngân hàng" name="banking" value="2">
                         <label class="auto" for="">Chuyển khoản ngân hàng</label>
                     </div>
+                    @if($data->giaban >= 10)
+
                     <div class="d-flex line">
                         <input onclick="openBox('tragop')" data-box="tragop" type="checkbox"
                                placeholder="Chuyển khoản ngân hàng" name="installment" value="2">
                         <label class="auto" for="">Trả góp</label>
                     </div>
+                    @endif
                     <div class="message text-center">
                         <input type="submit" name="submit" value="Đặt sim">
                     </div>
@@ -101,7 +104,7 @@
                 '{sim}' => @$data->sim1,
                 '{loai}' =>  @loai($data->loai)[0],
                 '{mang}' => mang(@$data->mang),
-                '{gia}' => tanggiamgia($data->simdl,$data->giaban)
+                '{gia}' => number_format($data->giaban*1000000)
                 );
             @endphp
             {!! thaythe(widget('cách thức mua sim'),$array)!!}
@@ -162,6 +165,7 @@
 
 
 
+    @include('buy_more')
     <!-- box thanh toan ngan hang -->
     <div id="chuyenkhoannh" class="boxck">
         <div class="close" onclick="closeBox('chuyenkhoannh')"></div>

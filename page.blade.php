@@ -14,6 +14,34 @@
 
 
 
+
+
+ <div class="text-box">
+            <div class="post-detail">
+                <strong style="color: blue;">Bài viết liên quan</strong>
+
+            @if (isset($list))
+
+
+                <ul>
+
+                    @foreach($list AS $r)
+
+                        <li>
+
+                            <a href="{{url()}}/{{@$r->page_url}}.html">{{@$r->page_title}}</a>
+                        </li>
+                        @endforeach
+
+                </ul>
+
+                @endif
+
+            </div>
+        </div>
+
+
+
         @else
 
 

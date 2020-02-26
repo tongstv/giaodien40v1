@@ -69,7 +69,8 @@
                                 <div class="arrow"></div>
                                 <h3 class="popover-title">Hướng dẫn tìm sim</h3>
                                 <div class="popover-content">
-                                    Hot key: 09*9999, *9999, *6868, *1989, 09*9999
+                                    {!! widget('Hướng dẫn tìm kiếm sim trên mobile') !!}
+
                                 </div>
                             </div>
                             <input type="submit" name="submit" class="btn btn-success btn-mobile" value="">
@@ -159,14 +160,15 @@
                         <div class="panel-header">SIM TẠO THƯƠNG HIỆU</div>
                         <div class="panel-content">
                             <ul class="sitebar-list">
-                                <li><a href="{{url()}}/sim-luc-quy">Sim Lục quý</a></li>
-                                <li><a href="{{url()}}/sim-luc-quy-giua">Sim Lục quý giữa</a></li>
-                                <li><a href="{{url()}}/sim-ngu-quy">Sim ngũ quý</a></li>
-                                <li><a href="{{url()}}/sim-ngu-quy-giua">Sim ngũ quý giữa</a></li>
-                                <li><a href="{{url()}}/sim-tu-quy">Sim tứ quý</a></li>
-                                <li><a href="{{url()}}/sim-tam-hoa-kep">Sim tam hoa kép</a></li>
-                                <li><a href="{{url()}}/sim-taxi">Sim Taxi</a></li>
-                                <li><a href="{{url()}}/sim-tra-gop">Sim trả góp</a></li>
+                                <li><a href="{{url('sim-luc-quy')}}">Sim Lục quý</a></li>
+                                <li><a href="{{url('sim-luc-quy-giua')}}">Sim Lục quý giữa</a></li>
+                                <li><a href="{{url('sim-ngu-quy')}}">Sim ngũ quý</a></li>
+                                <li><a href="{{url('sim-ngu-quy-giua')}}">Sim ngũ quý giữa</a></li>
+                                <li><a href="{{url('sim-tu-quy')}}">Sim tứ quý</a></li>
+                                <li><a href="{{url('sim-tam-hoa-kep')}}">Sim tam hoa kép</a></li>
+                                <li><a href="{{url()}}/sim-taxi-hai">Sim Taxi hai</a></li>
+                                <li><a href="{{url()}}/sim-taxi-ba">Sim Taxi ba</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -175,14 +177,37 @@
                         <div class="panel-header">SIM VIP DOANH NHÂN</div>
                         <div class="panel-content">
                             <ul class="sitebar-list">
-                                <li><a href="{{url()}}/sim-tu-quy-giua">Sim tứ quý giữa</a></li>
-                                <li><a href="{{url()}}/sim-tam-hoa">Sim tam hoa</a></li>
-                                <li><a href="{{url()}}/sim-tien-len">Sim tiến lên</a></li>
-                                <li><a href="{{url()}}/sim-de-nho">Sim dễ nhớ</a></li>
-                                <li><a href="{{url()}}/sim-so-doc">Sim số độc</a></li>
-                                <li><a href="{{url()}}/sim-lap-kep">Sim lặp kép</a></li>
-                                <li><a href="{{url()}}/sim-ganh-dao">Sim gánh đảo</a></li>
-                                <li><a href="{{url()}}/sim-nam-sinh">Sim Năm sinh</a></li>
+                                <li><a href="{{url('sim-tu-quy-giua')}}">Sim tứ quý giữa</a></li>
+
+
+                                <li><a href="{{url('sim-tam-hoa')}}">Sim tam hoa</a></li>
+
+
+                                <li><a href="{{url('sim-tien-don')}}">Sim tiến đơn</a></li>
+                                <li><a href="{{url('sim-dac-biet')}}">Sim đặc biệt</a></li>
+                                <li><a href="{{url('sim-nam-sinh')}}">Sim Năm sinh</a></li>
+                                <li><a href="{{url('sim-lap')}}">Sim lặp</a></li>
+                                <li><a href="{{url('sim-kep')}}">Sim kép</a></li>
+                                <li><a href="{{url('sim-ganh')}}">Sim gánh</a></li>
+                                <li><a href="{{url('sim-dao')}}">Sim đảo</a></li>
+
+                                <li><a href="{{url('sim-tra-gop')}}">Sim trả góp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel d-block d-md-none">
+                        <div class="panel-header">SIM SINH TÀI LỘC</div>
+                        <div class="panel-content">
+                            <ul class="sitebar-list">
+                                <li><a href="{{url('sim-loc-phat')}}">Sim Lộc Phát</a></li>
+                                <li><a href="{{url('sim-than-tai')}}">Sim Thần Tài</a></li>
+                                <li><a href="{{url('sim-ong-dia')}}">Sim Ông Địa</a></li>
+                                <li><a href="{{url('sim-phu-quy')}}">Sim Phú Quý</a></li>
+                                <li><a href="{{url('sim-de-nho')}}">Sim dễ nhớ</a></li>
+                                <li><a href="{{url('sim-dau-co')}}">Sim đầu số cổ</a></li>
+
+                                <li><a href="{{url('sim-thanh-ly.html')}}">*Sim thanh lý</a></li>
+                                <li><a href="{{url('sim-tra-sau')}}">*Sim trả sau</a></li>
                             </ul>
                         </div>
                     </div>
@@ -227,11 +252,8 @@
                     <div class="form-group text-center" style="width: 100%;">
                         <strong class="font-12">Hot key:</strong>
                         <span class="">
-								<a href="#" class="hotkey">09*9999</a>,
-								<a href="#" class="hotkey">*9999</a>,
-								<a href="#" class="hotkey">*6868</a>,
-								<a href="#" class="hotkey">*1989</a>,
-								<a href="#" class="hotkey">09*9999</a>
+                            {!! widget('hotkey trên máy tính') !!}
+
 							</span>
                     </div>
                     <!-- #form-search -->
@@ -343,11 +365,39 @@
 
 </div>
 
-<div class="mobile-hotline" onclick="HotlineClick()"></div>
+<div class="hotline-btn">
+    <a id="phonenumber" href="tel:0966767676">0966.76.76.76
+        <div id="phone">
+            <span></span>
+        </div>
+        <div></div>
+    </a>
+</div>
+
+<div id="zalo">
+    <a id="zalonum" href="https://zalo.me/0973767676" target="_blank"></a>
+</div>
 
 {!! widget('Mã nhúng body') !!}
 
+<script>
+    var zalo = ["https://zalo.me/0973767676","https://zalo.me/0942969696","https://zalo.me/0967767676","https://zalo.me/0966767676","https://zalo.me/0972122222"];
 
+    var phone = ["tel:0973767676", "tel:0949767676", "tel:0967767676", "tel:0703767676", "tel:0966767676", "tel:0912767676", "tel:0973969696", "tel:0942969696", "tel:0946393939", "tel:0972122222", "tel:0946383838", "tel:0976822222"];
+    var phonetext = ["0973.76.76.76", " 0949.76.76.76", "0967.76.76.76", "0703.76.76.76", "0966.76.76.76", "0912.76.76.76", "0973.96.96.96", "0942.96.96.96", "0946.39.39.39", "097.21.22222", "0946.38.38.38", "097.68.22222"];
+
+    var x = Math.floor((Math.random() * phone.length));
+
+    var y = Math.floor((Math.random() * zalo.length));
+    document.getElementById("phonenumber").setAttribute("href", phone[x]);
+
+    document.getElementById("zalonum").setAttribute("href", zalo[y]);
+    document.getElementById("phonenumber").innerHTML = phonetext[x] + '<div id="phone">\n' +
+        '            <span></span>\n' +
+        '        </div>\n' +
+        '        <div></div>';
+
+</script>
 
 <script src="{{url()}}/assets/js/jquery.min.js"></script>
 <script src="{{url()}}/assets/js/main.js"></script>
