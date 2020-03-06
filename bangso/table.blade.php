@@ -23,7 +23,7 @@
             if($page['page'] == 1)
                    $i=0;
         else
-        $i = $page['page']*$page['perPage'];
+        $i = ($page['page']-1)*$page['perPage'];
         @endphp
         @foreach($data AS $row)
 
@@ -35,7 +35,7 @@
                 $new =array();
                 foreach ($split AS $sp)
                 {
-                    $new[]= "<span style='color:#E66A20'>".$sp."</span>";
+                    $new[]= "<span class=\"mautimkiem\">".$sp."</span>";
                 }
 
              $row->sim2 =    str_replace($split,$new,$row->sim1);

@@ -29,9 +29,11 @@
                         @php
                             $row=$data
                         @endphp
-                        <span class="sim-info--nw">
+                        <span class="sim-info--type">
 
-                            @include("bangso.mang")
+                  <a href="{{url()}}/sim-{{mang($data->mang)}}">
+                            {{mang($data->mang)}}
+                            </a>
 
                             </span>
                     </li>
@@ -66,9 +68,9 @@
                     <input type="hidden" name="sosim" value="{{$data->sim1}}">
                     <h3 class="frm-order--head">ĐẶT MUA SIM</h3>
                     <label for="number">Điện thoại liên hệ*:</label>
-                    <input type="tel" name="number" placeholder="Điện thoại liên hệ" required="">
+                    <input type="tel" name="number" placeholder="Điện thoại liên hệ" required="" maxlength="15">
                     <label for="number">Họ và tên*:</label>
-                    <input type="text" name="name" placeholder="Họ và tên của bạn" required="">
+                    <input type="text" name="name" placeholder="Họ và tên của bạn" required="" >
                     <label for="number">Địa chỉ*:</label>
                     <input type="text" name="address" placeholder="Địa chỉ" required="">
 
@@ -78,14 +80,14 @@
                     </div>
                     <div class="d-flex line">
                         <input onclick="openBox('chuyenkhoan')" data-box="chuyenkhoannh" type="checkbox"
-                               placeholder="Chuyển khoản ngân hàng" name="banking" value="2">
+                               placeholder="Chuyển khoản ngân hàng" name="pay_method" value="2">
                         <label class="auto" for="">Chuyển khoản ngân hàng</label>
                     </div>
                     @if($data->giaban >= 10)
 
                     <div class="d-flex line">
                         <input onclick="openBox('tragop')" data-box="tragop" type="checkbox"
-                               placeholder="Chuyển khoản ngân hàng" name="installment" value="2">
+                               placeholder="Chuyển khoản ngân hàng" name="pay_method" value="3">
                         <label class="auto" for="">Trả góp</label>
                     </div>
                     @endif
@@ -159,7 +161,7 @@
                     </b>
                 </p>
             </div>
-            <input type="submit" name="tongtien" value="">
+
         </form>
     </div>
 
@@ -179,7 +181,7 @@
 
     <script>
         function tientragop(){
-            let laixuat = 1500;
+            let laixuat = 0;
             let giatien = document.getElementById("giatien").getAttribute("data-gia");
             let tratruoc = document.querySelector('input[name="tratruoc"]:checked').value;
             let thoigian = document.querySelector('input[name="thoigian"]:checked').value;
@@ -189,16 +191,9 @@
             //alert(tientramoithang);
             // Tính tổng lãi từng tháng
             let tongtra = 0;
-            for(var i=0; i<thoigian; i++) {
-                let lailan = tienconlai/1000000*laixuat*30;
-                tongtra = tongtra + lailan + tientramoithang;
-                console.log("Lai lan " + i + ": " + lailan);
-                tienconlai = tienconlai - tientramoithang;
-                console.log("con: " + tienconlai)
-            }
-            console.log("Tong tra " + tongtra);
-            let tratamtinh = Math.round(tongtra/thoigian);
-            let str = "<p>Số tiền trả trước tạm tính: <b>" + formatNumber(tientratruoc) + " ₫</b></p><p>Mỗi tháng trả tạm tính: <b>" + formatNumber(tratamtinh) + " ₫</b></p>";
+
+            let tratamtinh =(giatien-tientratruoc)/thoigian;
+            let str = "<p>Số tiền trả trước tạm tính: <b>" + formatNumber(tientratruoc) + " ₫</b></p><p>Mỗi tháng trả tạm tính: <b>" + formatNumber( Math.round(tratamtinh)) + " ₫</b></p>";
             document.getElementById("tongtien").innerHTML = str;
         }
         function formatNumber(num) {
@@ -215,9 +210,7 @@
             box = document.getElementById(box);
             box.classList.remove('show');
             document.querySelector(".overlay").classList.remove('show');
-            if(boxName == "tragop"){
-                document.querySelector('input[name="installment"]').checked = false;
-            }
+
         }
     </script>
 @endsection

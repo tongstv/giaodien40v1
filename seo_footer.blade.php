@@ -1,6 +1,6 @@
 <!-- #block sim -->
 @if (@$seo->seo_footer)
-    <div class="text-box">
+    <div class="text-box" id="seocontent">
         <div class="text-box-content">
 
 

@@ -26,11 +26,11 @@
 
                     @include("bangso.mang2")
                     <div class="table-cell table-cell--right sim-price">
-                        <del>{{number_format($row->gianhap*1000000)}}
+                        <del>{{number_format(@$row->gianhap*1000000)}}
                             ₫
                         </del>
                     </div>
-                    <div class="table-cell">{{number_format($row->giaban*1000000,0,".",".")}} ₫</div>
+                    <div class="table-cell">{{number_format(@$row->giaban*1000000,0,".",".")}} ₫</div>
                     <div class="table-cell"><a href="{{url($row->sim1)}}" class="order-btn cart">Mua
                             ngay</a></div>
                 </div>
@@ -40,8 +40,8 @@
         </div>
     </div>
     {{$data->links('bangso.links')}}
-    <div class="row text-center" style="margin-top: -15px;position: relative; margin-bottom: 10px"><a
-                class="center-block" style="color: #fff; margin: 0 auto;font-weight: bold;"
+    <div class="row text-center" style="position: relative; margin-top: 5px; margin-bottom: 15px"><a
+                class="center-block" style="color: #fff; margin: 0 auto;font-weight: bold; font-size: 18px;text-decoration: underline;"
                 href="/tim-sim/{{ \Illuminate\Support\Facades\Input::get("sim") ? \Illuminate\Support\Facades\Input::get("sim") : '*' }}?dauso={{ \Illuminate\Support\Facades\Input::get("dauso") }}&mang={{ \Illuminate\Support\Facades\Input::get("mang") }}&gia={{ \Illuminate\Support\Facades\Input::get("gia") }}&sapxep={{ \Illuminate\Support\Facades\Input::get("sapxep") }}&loai={{ \Illuminate\Support\Facades\Input::get("loai") }}">
             Xem kết quả tổng hợp cùng dạng >></a></div>
 
@@ -53,7 +53,7 @@
 
 
     </div>
-    @include("bangso.simthanhly_loc")
+    @include("bangso.loc")
 
 
 

@@ -47,7 +47,7 @@
 
                                     <div class="col-md-3 col-6">
                                         <div class="view-more sim-hot">
-                                            <a href="{{url("simhot")}}/{{$row->id}}">
+                                            <a href="{{url("simhot")}}/{{$row->id}}@if(@$row->simhot_mang)?mang={{@mang($row->simhot_mang)}}@endif">
                                                 <i class="fa fa-location-arrow fa-2x"></i> XEM THÊM
                                             </a>
                                         </div>

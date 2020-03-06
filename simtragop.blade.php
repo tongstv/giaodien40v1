@@ -5,7 +5,7 @@
     <div class="table-head">
         <h3 class="title text-center">SIM TRẢ GÓP</h3>
     </div>
-    @include("bangso.simtragop_loc")
+    @include("bangso.loc")
     <div class="table">
         <div class="table-body">
             <!-- row item -->
@@ -41,6 +41,15 @@
     </div>
     {{$data->links('bangso.links')}}
 
+
+    <div class="text-box filter-box">
+
+
+        <div class="filter-link"> {!! widget('Sim trả góp')!!}</div>
+
+
+
+    </div>
 @endsection
 
 @section("right")

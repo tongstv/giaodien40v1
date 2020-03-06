@@ -1,6 +1,7 @@
 @extends("app")
 @section("content")
-    @include("bangso.simthanhly_loc")
+
+    @include("bangso.loc")
     <div class="table-head">
         <h3 class="title text-center">{{$simhot->simhot_name}}</h3>
     </div>
@@ -34,7 +35,7 @@
     </div>
 
     {{$data->links('bangso.links')}}
-    @include("bangso.simthanhly_loc")
+    @include("bangso.loc")
 
 
 

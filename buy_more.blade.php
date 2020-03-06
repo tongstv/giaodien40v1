@@ -12,14 +12,14 @@
                         <a href="{{url($r->sim1)}}">
 
                             <img src="{{url('assets')}}/images/icon_{{mang($r->mang)}}.png"
-                                 alt="{{mang($r->mang)}}">
+                                 alt="{{mang($r->mang)}}" style="margin-top: 12px">
 
 
                             <p>
-                                <span class="sim-item--number">{{$r->sim1}}</span>
+                                <span class="sim-item--number" style="margin-top: 10px">{{$r->sim1}}</span>
                                 <span class="sim-item--price">{{number_format($r->giaban*1000000)}} đ</span>
-                                <del class="sim-item--priceDel">{{number_format($r->gianhap*1000000)}}
-                                    đ
+
+
                                 </del>
                             </p>
                         </a>

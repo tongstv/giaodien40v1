@@ -71,8 +71,7 @@
                 <div class="author-content">
                     <h4 class="author-name">About Đức toàn</h4>
                     <p class="author-description">
-                        Đức toàn với kinh nghiệm 7 năm về Copywriter, SEOer, Marketing Manager...qua nhiều dịch vụ, sản phẩm trong và ngoài nước và 5 năm kinh nghiệm trong ngành sim số đẹp, sim phong thủy
-                    </p>
+                        Tôi là Đức Toàn, người đã có 6 năm kinh nghiệm trong ngành sim số đẹp, sim phong thuỷ. Tôi sẽ mang đến cho bạn những kiến thức, tin tức về sim số đẹp một cách chính xác và nhanh nhất.  </p>
                     <a href="{{url()}}/tin-tuc/tac-gia/ductoan" class="author--posts-link">View all posts by  Đức toàn → </a>
                 </div>
             </div>

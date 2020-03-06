@@ -1,7 +1,7 @@
 @extends("app")
 
 @section('content')
-    @if(@$query['loai'] != 13)
+    @if(@$query['loai'] != 25)
     @include("bangso.loc")
     @endif
     @include ("seo_header")
@@ -14,7 +14,7 @@
 
     @if($check->action=='loaisim')
 
-        @if($query['loai'] == 13)
+        @if($query['loai'] == 25)
             @include("bangso.simnamsinh")
 
 
@@ -35,7 +35,7 @@ none
 
     @include("bangso.table")
 
-    @if(@$query['loai'] != 13)
+    @if(@$query['loai'] != 21)
     @include("bangso.loc")
     @endif
 
